@@ -4,7 +4,6 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Alert from "react-bootstrap/Alert";
 import Spinner from "react-bootstrap/Spinner";
-import { Link } from "react-router-dom";
 
 const Home = () => {
   const [garbages, setGarbages] = useState([]);
@@ -15,7 +14,7 @@ const Home = () => {
     const getGarbages = async () => {
       try {
         setLoading(true);
-        const { data } = await axios.get(`${process.env.REACT_APP_Garbage}`);
+        const { data } = await axios.get(`${process.env.REACT_APP_GARBAGE}`);
         setGarbages(data);
         setLoading(false);
       } catch (error) {
@@ -35,15 +34,19 @@ const Home = () => {
 
   if (error) return <Alert variant="danger">{error}</Alert>;
   if (loading) return <Spinner animation="border" variant="primary" />;
-  return garbages.map((Garbage) => (
-    <Col md={4} className="mb-4" key={Garbage.id}>
+  return garbages.map((garbage) => (
+    <Col md={4} className="mb-4" key={garbage.id}>
       <Card style={{ height: "100%" }}>
         <Card.Body>
           <Card.Title>
+            {garbage.street}
           </Card.Title>
-          <Card.Text></Card.Text>
+          <Card.Text>
+            Restmüll: {garbage.street}
+            </Card.Text>
         </Card.Body>
         <Card.Footer>
+        Restmüll: {garbage.street}
         </Card.Footer>
       </Card>
     </Col>
