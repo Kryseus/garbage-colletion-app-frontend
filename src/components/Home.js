@@ -34,20 +34,29 @@ const Home = () => {
 
   if (error) return <Alert variant="danger">{error}</Alert>;
   if (loading) return <Spinner animation="border" variant="primary" />;
+
   return garbages.map((garbage) => (
     <Col md={4} className="mb-4" key={garbage.id}>
       <Card style={{ height: "100%" }}>
         <Card.Body>
-          <Card.Title>
-            {garbage.street}
-          </Card.Title>
+          <Card.Title>{garbage.street}</Card.Title>
           <Card.Text>
-            Restmüll: {garbage.street}
-            </Card.Text>
+            <ul>
+              {garbage.colors.map((item) => {
+                return (
+                  <li>{item.name}
+                    <ul>
+                      {item.dates.map((date) => {
+                        return <li>{date}</li>;
+                      })}
+                    </ul>
+                  </li>
+                );
+              })}
+            </ul>
+          </Card.Text>
         </Card.Body>
-        <Card.Footer>
-        Restmüll: {garbage.street}
-        </Card.Footer>
+        <Card.Footer>Restmüll: {garbage.street}</Card.Footer>
       </Card>
     </Col>
   ));
