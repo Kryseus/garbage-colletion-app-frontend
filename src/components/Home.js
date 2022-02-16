@@ -40,11 +40,11 @@ const Home = () => {
       <Card style={{ height: "100%" }}>
         <Card.Body>
           <Card.Title>{garbage.street}</Card.Title>
-          <Card.Text>
             <ul>
               {garbage.colors.map((item) => {
                 return (
-                  <li>{item.name}
+                  <li>
+                    {item.name.id}
                     <ul>
                       {item.dates.map((date) => {
                         return <li>{date}</li>;
@@ -54,7 +54,6 @@ const Home = () => {
                 );
               })}
             </ul>
-          </Card.Text>
         </Card.Body>
         <Card.Footer>Restmüll: {garbage.street}</Card.Footer>
       </Card>

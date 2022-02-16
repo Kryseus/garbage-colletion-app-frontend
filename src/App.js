@@ -5,15 +5,14 @@ import Navigation from "./components/Navigation";
 import Home from "./components/Home";
 import SingleGarbage from "./components/SingleGarbage";
 import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
-import GarbageCalendar from "./components/Calendar.js";
+import GarbageCalendar from "./components/Calendar/Calendar.js";
 
 const App = () => {
   return (
     <BrowserRouter>
     <main>
       <Navigation />
-      
-     <Container>
+      <Container>
        <Row>
         <GarbageCalendar />
        </Row>
