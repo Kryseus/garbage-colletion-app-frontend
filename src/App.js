@@ -5,7 +5,8 @@ import Navigation from "./components/Navigation";
 import Home from "./components/Home";
 import SingleGarbage from "./components/SingleGarbage";
 import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
-import GarbageCalendar from "./components/Calendar/Calendar.js";
+import SelectStreet from "./components/SelectStreet";
+//import GarbageCalendar from "./components/Calendar/Calendar.js";
 
 const App = () => {
   return (
@@ -14,13 +15,12 @@ const App = () => {
       <Navigation />
       <Container>
        <Row>
-        <GarbageCalendar />
        </Row>
      
         <Row className="mt-5 justify-content-center">
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/garbage/:id" component={SingleGarbage} />
+            <Route exact path="/calendar" component={SelectStreet} />
           </Switch>
         </Row>
       </Container>
