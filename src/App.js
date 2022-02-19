@@ -6,7 +6,6 @@ import CalendarByStreet from "./components/CalendarByStreet";
 import SingleGarbage from "./components/SingleGarbage";
 import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
 import SelectStreet from "./components/SelectStreet";
-//import GarbageCalendar from "./components/Calendar/Calendar.js";
 
 const App = () => {
   return (
