@@ -2,7 +2,7 @@ import { Switch, Route } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Navigation from "./components/Navigation";
-import Home from "./components/Home";
+import CalendarByStreet from "./components/CalendarByStreet";
 import SingleGarbage from "./components/SingleGarbage";
 import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
 import SelectStreet from "./components/SelectStreet";
@@ -19,8 +19,9 @@ const App = () => {
      
         <Row className="mt-5 justify-content-center">
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/calendar" component={SelectStreet} />
+            <Route exact path="/" component={SelectStreet} />
+            <Route exact path="/street/:id" component={CalendarByStreet} />
+            <Route exact path="/garbage/:id" component={SingleGarbage} />
           </Switch>
         </Row>
       </Container>
