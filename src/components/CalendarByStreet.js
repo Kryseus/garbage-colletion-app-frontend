@@ -6,7 +6,6 @@ import Card from "react-bootstrap/Card";
 import Alert from "react-bootstrap/Alert";
 import Spinner from "react-bootstrap/Spinner";
 import Calendar from "./Calendar/Calendar.js";
-import GarbageCalendar from "./Calendar/Calendar.js";
 
 const CalendarByStreet = () => {
   const { id } = useParams();
@@ -39,7 +38,7 @@ const CalendarByStreet = () => {
   if (error) return <Alert variant="danger">{error}</Alert>;
   if (loading) return <Spinner animation="border" variant="primary" />;
 
-  return <GarbageCalendar garbageSchedule={garbageSchedule} />;
+  return <Calendar garbageSchedule={garbageSchedule} />;
 };
 
 export default CalendarByStreet;
