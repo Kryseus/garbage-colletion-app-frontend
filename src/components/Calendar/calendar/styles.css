@@ -79,6 +79,10 @@
   color: var(--grey);
 }
 
+.calendar .day div.after {
+  color: var(--grey);
+}
+
 .calendar .day div.selected {
   background-color: var(--red);
   color: var(--white);
