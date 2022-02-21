@@ -5,7 +5,7 @@ import dayStyles, {isToday} from "./styles";
 import Header from "./header";
 //import CalendarByStreet from "../../CalendarByStreet";
 
-const Calendar = ({ value, onChange }) => {
+const Calendar = ({ value, onChange, garbageSchedule }) => {
   const [calendar, setCalendar] = useState([]);
   
 
@@ -28,9 +28,8 @@ const Calendar = ({ value, onChange }) => {
             <div className="day" onClick={() => onChange(day)}>
               <div className={dayStyles(day, value)}>
                 {day.format("D").toString()}
-                <p>Text goes here</p>
-              {/*}  <div>
-                {this.props.garbageSchedule?.colors?.map(color => {
+              {  <div>
+                {garbageSchedule?.colors?.map(color => {
                   const shouldBeColored = color.dates.find(day => day === `${day}`) ? 'yes' : 'no';
                   return (
                     <div>
@@ -38,7 +37,7 @@ const Calendar = ({ value, onChange }) => {
                     </div>
                   )
                 })}
-              </div> */}
+              </div> }
               </div>
             </div>
           ))}
