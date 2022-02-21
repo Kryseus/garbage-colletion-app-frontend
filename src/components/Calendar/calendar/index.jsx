@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
 import buildCalendar from "./build";
-import dayStyles, {beforeToday} from "./styles";
+import dayStyles, {isToday} from "./styles";
 import Header from "./header";
-import SingleGarbage from "../../SingleGarbage";
+//import CalendarByStreet from "../../CalendarByStreet";
 
 const Calendar = ({ value, onChange }) => {
   const [calendar, setCalendar] = useState([]);
@@ -28,13 +28,24 @@ const Calendar = ({ value, onChange }) => {
             <div className="day" onClick={() => onChange(day)}>
               <div className={dayStyles(day, value)}>
                 {day.format("D").toString()}
-                Info Hier!
+                <p>Text goes here</p>
+              {/*}  <div>
+                {this.props.garbageSchedule?.colors?.map(color => {
+                  const shouldBeColored = color.dates.find(day => day === `${day}`) ? 'yes' : 'no';
+                  return (
+                    <div>
+                      {color.name} | {shouldBeColored}
+                    </div>
+                  )
+                })}
+              </div> */}
               </div>
             </div>
           ))}
         </div>
       ))}
      </div>
+      
     </div>
   );
 };

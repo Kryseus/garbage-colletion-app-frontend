@@ -5,5 +5,5 @@ import Calendar from "./calendar/index.jsx";
 
 export default function () {
   const [value, setValue] = useState(moment());
-  return <Calendar value={value} onChange={setValue}/>;
-}
+  return <Calendar value={value} onChange={setValue} />
+};
