@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
 import buildCalendar from "./build";
-import dayStyles, {isToday} from "./styles";
+import dayStyles, { isToday } from "./styles";
 import Header from "./header";
 //import CalendarByStreet from "../../CalendarByStreet";
 
 const Calendar = ({ value, onChange, garbageSchedule }) => {
   const [calendar, setCalendar] = useState([]);
-  
 
   useEffect(() => {
     setCalendar(buildCalendar(value));
@@ -29,11 +28,11 @@ const Calendar = ({ value, onChange, garbageSchedule }) => {
               <div className={dayStyles(day, value)}>
                 {day.format("D").toString()}
               {  <div>
-                {garbageSchedule?.colors?.map(color => {
-                  const shouldBeColored = color.dates.find(day => day === `${day}`) ? 'yes' : 'no';
+                {garbageSchedule?.colors?.map(colors => {
+                  const shouldBeColored = colors.dates.find(day => day === `${day}`) ? 'yes' : 'no';
                   return (
-                    <div>
-                      {color.name} | {shouldBeColored}
+                    <div className="color">
+                      {colors.name} | {shouldBeColored}
                     </div>
                   )
                 })}

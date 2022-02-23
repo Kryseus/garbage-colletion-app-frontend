@@ -1,6 +1,8 @@
 import React from "react";
 
 const CalendarHeader = ({ value, setValue }) => {
+
+
   function currMonthName() {
     return value.format("MMMM");
   };
@@ -27,7 +29,7 @@ const CalendarHeader = ({ value, setValue }) => {
         {String.fromCharCode(171)}
       </div>
       <div className="current">
-        {currMonthName()} {currYear()}
+        {currMonthName()} {currYear()} 
       </div>
       <div className="next" onClick={() => setValue(nextMonth())}>
         {String.fromCharCode(187)}

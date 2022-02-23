@@ -1,7 +1,7 @@
 .calendar {
   box-sizing: border-box;
   font-size: 1rem;
-  max-width: 400px;
+  max-width: auto;
 }
 
 .calendar .header {
@@ -18,7 +18,7 @@
 .calendar .day-names {
   display: flex;
   flex-wrap: wrap;
-  max-width: 1000px;
+  max-width: auto;
   margin: 0 auto;
   align-items: center;
 }
@@ -91,4 +91,8 @@
 
 .calendar .day div.today {
   background-color: var(--grey);
+}
+
+.calendar .day div.color {
+  width: 300px;
 }
